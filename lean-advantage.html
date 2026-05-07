@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lean Advantage</title>
+  <meta name="description" content="Lean Advantage helps manufacturing leaders improve flow, reduce waste, and build operational discipline through Lean, Six Sigma, TPM, Kaizen, and leadership training." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2.1rem, 1.3rem + 2.4vw, 3.5rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+      --color-bg: #ffffff;
+      --color-surface: #fafaf8;
+      --color-primary: #2f8055;
+      --color-primary-dark: #2a7048;
+      --color-primary-tint: rgba(47, 128, 85, 0.1);
+      --color-text: #111111;
+      --color-body: #555555;
+      --color-faint: #888888;
+      --color-border: rgba(17, 17, 17, 0.12);
+      --color-divider: rgba(17, 17, 17, 0.08);
+      --color-quote: #1a3326;
+      --radius-md: 0.625rem;
+      --radius-lg: 0.75rem;
+      --radius-full: 999px;
+      --shadow-soft: 0 14px 40px rgba(17, 17, 17, 0.035);
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', 'Helvetica Neue', sans-serif;
+      --container: 1160px;
+      --nav-h: 5.25rem;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      scroll-padding-top: calc(var(--nav-h) + 1rem);
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.65;
+      color: var(--color-body);
+      background: var(--color-bg);
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem; background: var(--color-primary);
+      color: #fff; padding: 0.8rem 1rem; border-radius: var(--radius-md); z-index: 200;
+    }
+    .skip-link:focus { top: 1rem; }
+    .site-shell { overflow-x: clip; }
+    .container { width: min(calc(100% - 2rem), var(--container)); margin: 0 auto; }
+    .section { padding: clamp(var(--space-16), 10vw, var(--space-24)) 0; }
+    .section-alt { background: var(--color-surface); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: var(--text-xs); letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-5);
+    }
+    .eyebrow::before {
+      content: ""; width: 2.25rem; height: 1px; background: currentColor; opacity: 0.4;
+    }
+    h1, h2, h3 { margin: 0; color: var(--color-text); line-height: 1.08; }
+    h1, h2 { font-family: var(--font-display); font-weight: 400; }
+    h1 { font-size: clamp(3rem, 5vw, 3.6rem); max-width: 11ch; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -0.03em; }
+    h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.01em; }
+    p { margin: 0; max-width: 66ch; }
+    .lead { font-size: clamp(1.05rem, 1rem + 0.45vw, 1.28rem); color: var(--color-body); }
+    .caption { font-size: var(--text-xs); color: var(--color-faint); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+    .btn {
+      min-height: 46px; padding: 0.88rem 1.2rem; border-radius: var(--radius-md);
+      border: 1px solid transparent; display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.55rem; font-size: var(--text-sm); font-weight: 500; transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--color-primary); color: #fff; }
+    .btn-primary:hover { background: var(--color-primary-dark); }
+    .btn-secondary { background: transparent; color: var(--color-text); border-color: var(--color-border); }
+    .btn-secondary:hover { background: var(--color-primary-tint); border-color: rgba(47, 128, 85, 0.25); }
+    .btn-ghost { background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.18); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+
+    header.site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .nav-wrap {
+      min-height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 0.9rem; min-height: 44px; }
+    .brand-mark {
+      width: 2.6rem; height: 2.6rem; border-radius: 0.7rem; display: grid; place-items: center;
+      background: var(--color-primary); color: #fff; flex: 0 0 auto;
+    }
+    .brand-mark svg { width: 1.5rem; height: 1.5rem; }
+    .brand-copy { display: flex; flex-direction: column; }
+    .brand-name { color: var(--color-text); font-weight: 600; letter-spacing: -0.02em; }
+    .brand-sub { font-size: 0.73rem; color: var(--color-faint); text-transform: uppercase; letter-spacing: 0.12em; }
+    nav.primary-nav { display: flex; align-items: center; gap: 1.25rem; }
+    nav.primary-nav a {
+      min-height: 44px; display: inline-flex; align-items: center; font-size: var(--text-sm);
+      color: var(--color-body); position: relative;
+    }
+    nav.primary-nav a::after {
+      content: ""; position: absolute; left: 0; bottom: 0.6rem; width: 100%; height: 1px; background: var(--color-primary);
+      transform: scaleX(0); transform-origin: left; transition: transform var(--transition);
+    }
+    nav.primary-nav a:hover, nav.primary-nav a:focus-visible { color: var(--color-primary); }
+    nav.primary-nav a:hover::after, nav.primary-nav a:focus-visible::after { transform: scaleX(1); }
+    .nav-cta { display: inline-flex; }
+
+    .hero {
+      position: relative; padding: clamp(var(--space-16), 9vw, var(--space-24)) 0 var(--space-20);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 2rem auto auto 58%; width: min(38vw, 29rem); aspect-ratio: 1;
+      border: 1px solid rgba(47,128,85,0.12); border-radius: 50%; transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto 0 5rem auto; width: 22rem; height: 1px;
+      background: linear-gradient(90deg, rgba(47,128,85,0), rgba(47,128,85,0.18), rgba(47,128,85,0));
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr); gap: clamp(2rem, 4vw, 5rem); align-items: start;
+    }
+    .hero-copy { position: relative; z-index: 1; }
+    .hero h1 { opacity: 0; transform: translateY(14px); animation: riseIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .hero h1 em { color: var(--color-primary); font-style: italic; }
+    .hero p { margin-top: var(--space-5); }
+    .hero-actions { margin-top: var(--space-8); }
+    .hero-note { margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-faint); }
+    .hero-panel {
+      position: relative; padding: clamp(1.4rem, 2.5vw, 2rem); background: var(--color-surface);
+      border: 0.5px solid var(--color-border); border-radius: 1rem; box-shadow: var(--shadow-soft);
+    }
+    .hero-panel::before {
+      content: ""; position: absolute; inset: 1rem; border: 1px solid rgba(47,128,85,0.08); border-radius: calc(1rem - 1rem);
+      pointer-events: none;
+    }
+    .stats-grid { display: grid; gap: 0.9rem; }
+    .stat {
+      padding: 1rem 0 1rem; border-bottom: 1px solid rgba(17,17,17,0.08);
+      display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: end;
+    }
+    .stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .stat strong {
+      font-family: var(--font-display); font-size: clamp(2rem, 3vw, 2.8rem); color: var(--color-text); font-weight: 400;
+      line-height: 1;
+    }
+    .stat span { color: var(--color-body); font-size: var(--text-sm); }
+    .panel-kicker {
+      display: inline-flex; padding: 0.45rem 0.7rem; border-radius: var(--radius-full); background: var(--color-primary-tint);
+      color: var(--color-primary); font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 1.1rem;
+    }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;
+      margin-top: var(--space-10);
+    }
+    .service-card {
+      background: #fff; border: 0.5px solid var(--color-border); border-radius: 0.8rem; padding: 1.25rem;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+      min-height: 220px; display: flex; flex-direction: column; gap: 0.8rem;
+    }
+    .service-card:hover { transform: translateY(-3px); border-color: rgba(47, 128, 85, 0.28); background: var(--color-surface); }
+    .service-index {
+      width: 2.4rem; height: 2.4rem; border-radius: var(--radius-full); background: var(--color-primary-tint);
+      color: var(--color-primary); display: grid; place-items: center; font-size: var(--text-xs); font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid; grid-template-columns: minmax(290px, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: center;
+      margin-top: var(--space-10);
+    }
+    .portrait-card {
+      background: var(--color-surface); border: 0.5px solid var(--color-border); border-radius: 1rem; padding: 1rem;
+    }
+    .portrait-frame {
+      aspect-ratio: 4 / 4.6; border-radius: 0.85rem; background:
+        linear-gradient(180deg, rgba(47,128,85,0.12), rgba(47,128,85,0.04)),
+        repeating-linear-gradient(90deg, rgba(17,17,17,0.03) 0, rgba(17,17,17,0.03) 1px, transparent 1px, transparent 48px),
+        linear-gradient(135deg, #e9efe8, #f6f6f2 58%, #ecece7);
+      position: relative; overflow: hidden; display: flex; align-items: end; padding: 1.4rem;
+    }
+    .portrait-silhouette {
+      position: absolute; inset: auto -8% 0 auto; width: 82%; height: 88%;
+      background: radial-gradient(circle at 50% 18%, rgba(26,51,38,0.2) 0 10%, transparent 10.5%),
+        radial-gradient(circle at 50% 17%, rgba(26,51,38,0.9) 0 10%, transparent 10.8%),
+        radial-gradient(circle at 50% 46%, rgba(26,51,38,0.92) 0 24%, transparent 24.5%),
+        linear-gradient(180deg, transparent 0 24%, rgba(26,51,38,0.92) 24% 100%);
+      filter: blur(0.2px);
+      opacity: 0.9;
+      border-radius: 40% 40% 0 0;
+    }
+    .portrait-meta {
+      position: relative; z-index: 1; background: rgba(255,255,255,0.72); backdrop-filter: blur(10px);
+      padding: 0.9rem 1rem; border-radius: 0.7rem; border: 0.5px solid rgba(17,17,17,0.08);
+      max-width: 16rem;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: var(--space-6); }
+    .badge {
+      display: inline-flex; align-items: center; min-height: 36px; padding: 0.5rem 0.85rem; border-radius: var(--radius-full);
+      background: var(--color-primary-tint); color: var(--color-primary); font-size: var(--text-xs); font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .about-copy > * + * { margin-top: 1rem; }
+
+    .industry-wrap { margin-top: var(--space-10); display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .industry-pill {
+      min-height: 42px; padding: 0.7rem 1rem; border-radius: var(--radius-full); border: 0.5px solid var(--color-border);
+      color: var(--color-text); background: #fff; font-size: var(--text-sm); display: inline-flex; align-items: center; gap: 0.55rem;
+    }
+    .industry-pill::before {
+      content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--color-primary);
+    }
+
+    .testimonial {
+      background: var(--color-quote); color: rgba(255,255,255,0.82);
+    }
+    .testimonial .container { display: grid; gap: 1.2rem; }
+    .testimonial .eyebrow { color: rgba(255,255,255,0.7); }
+    .testimonial .eyebrow::before { background: rgba(255,255,255,0.4); }
+    .quote-mark {
+      font-family: var(--font-display); font-size: clamp(4rem, 12vw, 6rem); line-height: 0.75; color: rgba(255,255,255,0.18);
+    }
+    blockquote {
+      margin: 0; font-family: var(--font-display); color: #fff; font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.18; max-width: 18ch;
+    }
+    .quote-attrib { color: rgba(255,255,255,0.72); font-size: var(--text-sm); }
+
+    .cta-banner {
+      padding: clamp(1.7rem, 3.5vw, 2.4rem); background: var(--color-primary); color: #fff; border-radius: 1rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .cta-banner h2 { color: #fff; max-width: 14ch; }
+    .cta-banner p { color: rgba(255,255,255,0.84); max-width: 48ch; }
+
+    footer {
+      padding: 2rem 0 3rem; border-top: 1px solid var(--color-divider);
+    }
+    .footer-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; font-size: var(--text-sm); }
+    .footer-links a { color: var(--color-body); }
+    .footer-links a:hover { color: var(--color-primary); }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-reveal].visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes riseIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero::before { left: 72%; width: 24rem; }
+      .nav-wrap { flex-wrap: wrap; padding: 0.8rem 0; }
+      nav.primary-nav { order: 3; width: 100%; overflow-x: auto; padding-bottom: 0.2rem; }
+      .nav-cta { margin-left: auto; }
+    }
+
+    @media (max-width: 680px) {
+      :root { --nav-h: 4.9rem; }
+      .container { width: min(calc(100% - 1.25rem), var(--container)); }
+      h1 { max-width: 12ch; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stat { grid-template-columns: 1fr; gap: 0.35rem; }
+      .cta-banner { align-items: flex-start; }
+      .footer-row { align-items: flex-start; }
+      nav.primary-nav { gap: 1rem; }
+      .hero::before, .hero::after { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      [data-reveal] { opacity: 1; transform: none; }
+      .hero h1 { opacity: 1; transform: none; animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top" aria-label="Lean Advantage home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 32L20 18L28 25L38 12" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M32 12H38V18" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">Lean Advantage</span>
+            <span class="brand-sub">Training &amp; Consulting</span>
+          </span>
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#industries">Industries</a>
+          <a href="#results">Results</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="#contact">Book Consultation</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Lean manufacturing leadership</span>
+            <h1>Build a factory that runs <em>with discipline</em>, not daily firefighting.</h1>
+            <p class="lead">Lean Advantage helps manufacturing owners and CEOs reduce waste, improve flow, strengthen shop-floor accountability, and train leaders who can hold gains after the consultant leaves.</p>
+            <div class="btn-row hero-actions">
+              <a class="btn btn-primary" href="#contact">Book Consultation</a>
+              <a class="btn btn-secondary" href="#services">View Services</a>
+            </div>
+            <p class="hero-note">For manufacturers that need practical operational excellence, not presentation-deck advice.</p>
+          </div>
+
+          <aside class="hero-panel" aria-label="Key credibility metrics">
+            <span class="panel-kicker">Trusted by plant leaders</span>
+            <div class="stats-grid">
+              <div class="stat">
+                <strong>23+</strong>
+                <span>Years of hands-on manufacturing experience across real production environments.</span>
+              </div>
+              <div class="stat">
+                <strong>300+</strong>
+                <span>Training sessions delivered for teams building stronger systems, faster response, and better habits.</span>
+              </div>
+              <div class="stat">
+                <strong>MBB</strong>
+                <span>Certified Business Excellence Master Black Belt, Benchmark Six Sigma / Exemplar Global.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="services">
+        <div class="container">
+          <span class="eyebrow" data-reveal>Core services</span>
+          <h2 data-reveal>Capability building for the shop floor, the middle layer, and the leadership table.</h2>
+          <p class="lead" style="margin-top: 1rem;" data-reveal>Each engagement is designed to improve throughput, quality, reliability, and management discipline without losing sight of the commercial reality of your plant.</p>
+
+          <div class="services-grid">
+            <article class="service-card" data-reveal>
+              <div class="service-index">01</div>
+              <h3>Lean Six Sigma</h3>
+              <p>Structured problem solving for defects, delays, cost leakage, and unstable processes, with training that teams can apply on live business issues.</p>
+            </article>
+            <article class="service-card" data-reveal>
+              <div class="service-index">02</div>
+              <h3>TPM &amp; Kaizen</h3>
+              <p>Operator ownership, maintenance discipline, and continuous improvement routines that raise equipment effectiveness and reduce repeat losses.</p>
+            </article>
+            <article class="service-card" data-reveal>
+              <div class="service-index">03</div>
+              <h3>5S &amp; Visual Management</h3>
+              <p>Practical workplace organisation and visual controls that make abnormalities visible early and standards easier to sustain.</p>
+            </article>
+            <article class="service-card" data-reveal>
+              <div class="service-index">04</div>
+              <h3>SMED &amp; Poka Yoke</h3>
+              <p>Faster changeovers and error-proofing methods that reduce downtime, improve flexibility, and lower the cost of inconsistency.</p>
+            </article>
+            <article class="service-card" data-reveal>
+              <div class="service-index">05</div>
+              <h3>Value Stream Mapping</h3>
+              <p>Current-state diagnosis and future-state design that clarify where time, inventory, effort, and margin are being lost across the flow.</p>
+            </article>
+            <article class="service-card" data-reveal>
+              <div class="service-index">06</div>
+              <h3>Leadership &amp; Soft Skills</h3>
+              <p>Supervisor and manager development focused on accountability, communication, coaching, and the daily behaviours required to hold operational gains.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <span class="eyebrow" data-reveal>Principal consultant</span>
+          <h2 data-reveal>Experienced enough to challenge the system, practical enough to improve it.</h2>
+          <div class="about-grid">
+            <div class="portrait-card" data-reveal>
+              <div class="portrait-frame" role="img" aria-label="Stylised portrait placeholder representing the principal consultant of Lean Advantage.">
+                <div class="portrait-silhouette" aria-hidden="true"></div>
+                <div class="portrait-meta">
+                  <strong style="display:block; color:var(--color-text);">Principal Consultant</strong>
+                  <span class="caption">Manufacturing improvement specialist</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-copy" data-reveal>
+              <p class="lead">The practice is led by a manufacturing professional with more than 28 years of experience improving processes, developing people, and strengthening operating systems in demanding production environments.</p>
+              <p>That experience is backed by certified expertise as a Business Excellence Master Black Belt through Benchmark Six Sigma / Exemplar Global, and by 300+ training sessions delivered for teams that need discipline, clarity, and measurable improvement.</p>
+              <p>The style is direct and implementation-focused: diagnose the real constraint, train the people who own the work, and build systems that remain stable under commercial pressure.</p>
+              <div class="badge-row" aria-label="Credentials and certifications">
+                <span class="badge">28+ Years Manufacturing</span>
+                <span class="badge">Business Excellence Master Black Belt</span>
+                <span class="badge">Benchmark Six Sigma</span>
+                <span class="badge">Exemplar Global</span>
+                <span class="badge">300+ Training Sessions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="industries">
+        <div class="container">
+          <span class="eyebrow" data-reveal>Industries served</span>
+          <h2 data-reveal>Operational excellence adapted to the realities of different production systems.</h2>
+          <p class="lead" style="margin-top: 1rem;" data-reveal>From discrete manufacturing to regulated environments, the work is grounded in process discipline, leadership capability, and reliable execution.</p>
+          <div class="industry-wrap" data-reveal>
+            <span class="industry-pill">Automotive</span>
+            <span class="industry-pill">Plastic</span>
+            <span class="industry-pill">Pharma</span>
+            <span class="industry-pill">FMCG</span>
+            <span class="industry-pill">Warehousing</span>
+            <span class="industry-pill">Hospitals</span>
+            <span class="industry-pill">Education</span>
+            <span class="industry-pill">Process Plants</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonial" id="results">
+        <div class="container">
+          <span class="eyebrow" data-reveal>What clients remember</span>
+          <div class="quote-mark" aria-hidden="true" data-reveal>“</div>
+          <blockquote data-reveal>
+            He did not give us theory for the conference room. He helped our team see waste, act faster, and run the plant with far more control.
+          </blockquote>
+          <p class="quote-attrib" data-reveal>Operations leader, manufacturing client</p>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="cta-banner" data-reveal>
+            <div>
+              <span class="eyebrow" style="color: rgba(255,255,255,0.78); margin-bottom: 0.8rem;">Book a consultation</span>
+              <h2>Bring sharper systems, stronger leaders, and better factory discipline into the business.</h2>
+              <p style="margin-top: 0.8rem;">Start with a focused conversation about your plant, your constraints, and the improvements that will matter commercially.</p>
+            </div>
+            <div class="btn-row">
+              <a class="btn btn-ghost" href="mailto:maulikdoshi75@gmail.com?subject=Consultation%20Request">Book Consultation</a>
+              <a class="btn btn-ghost" href="https://wa.me/919825690822" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <div>
+          <div class="brand-name">Lean Advantage</div>
+          <div class="caption" style="margin-top: 0.35rem;">Africa & India</div>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#industries">Industries</a>
+          <a href="#contact">Consultation</a>
+        </div>
+        <div class="caption">© 2026 Lean Advantage. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
